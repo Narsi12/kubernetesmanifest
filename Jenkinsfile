@@ -17,10 +17,10 @@ pipeline {
                 script {
                     catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                         withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-                            sh "git config user.email raj@cloudwithraj.com"
-                            sh "git config user.name RajSaha"
+                            sh "git config user.email chnarsimha2580@gmail.com"
+                            sh "git config user.name Narsi12"
                             sh "cat deployment.yaml"
-                            sh "sed -i 's+raj80dockerid/test.*+raj80dockerid/test:${DOCKERTAG}+g' deployment.yaml"
+                            sh "sed -i 's+narsimha2580/test.*+narsimha2580/test:${DOCKERTAG}+g' deployment.yaml"
                             sh "cat deployment.yaml"
                             sh "git add ."
                             sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
