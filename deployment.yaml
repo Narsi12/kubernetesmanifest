@@ -18,7 +18,7 @@ spec:
         app: fastapidemo
     spec:
       containers:
-      - image: narsimha2580/test:6
+      - image: narsimha2580/test:latest
         name: fastapidemo
         resources: {}
 status: {}
