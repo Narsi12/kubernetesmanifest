@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: flaskdemo
-  name: flaskdemo
+    app: fastapidemo
+  name: fastapidemo
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: flaskdemo
+      app: fastapidemo
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: flaskdemo
+        app: fastapidemo
     spec:
       containers:
-      - image: raj80dockerid/test:6
-        name: flaskdemo
+      - image: narsimha2580/test:6
+        name: fastapidemo
         resources: {}
 status: {}
 ---
@@ -33,6 +33,6 @@ spec:
   type: LoadBalancer
   ports:
   - port: 80
-    targetPort: 5000
+    targetPort: 8080
   selector:
-    app: flaskdemo
+    app: fastapidemo
